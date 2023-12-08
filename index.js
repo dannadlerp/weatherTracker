@@ -2,7 +2,8 @@ let geoLat = 43.5789;
 let geoLon = 79.6583;
 const apiKey = '80b66692cc83d65b511d9584d9a227b7';
 const apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${geoLat}&lon=${geoLon}&appid=${apiKey}`;
-let weatherInfo = {};
+let weatherInfo = {name: "weatherApp"};
+let hour = 21;
 
 //retrieve api and convert with json
  fetch(apiURL)
@@ -11,8 +12,6 @@ let weatherInfo = {};
  })
 
  .then(function (data) {
-   let weatherDataReturned = data;
-   let hour = 27;
    weatherInfo.cityName = data.city.name;
    weatherInfo.coord = data.city.coord;
    weatherInfo.country = data.city.country;
@@ -34,7 +33,7 @@ let weatherInfo = {};
       console.log(`Windspeed: ${weatherInfo.windSpd}km/h`);
    }
 })
-console.log(weatherInfo);
+console.log(weatherInfo.pop);
 
 /* if (length(data) === 0) {
 } else {}
@@ -43,5 +42,6 @@ console.log('nothing returned'); //checks a value has been returned
 )
 console.log(weatherInfo); */
 
- document.getElementById("weather-info").textContent = [weatherInfo.cityName, weatherInfo.detail, `Windspeed: ${weatherInfo.windSpd}km/h`];
-document.getElementById("search-button").click();
+ document.getElementById("weather-info").textContent = [weatherInfo.cityName, weatherInfo.detail, `Weather is: ${weatherInfo.desc}`];
+document.getElementById("search-button").onclick
+console.log(weatherInfo);
