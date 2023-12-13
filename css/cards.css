@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+
+.card {
+    color: grey;
+    height: 200;
+    width: 100;
+    border: 10px solid black;
+    border-radius: 20;
+    margin-left: 50;
+    margin-right: 50;
+    background-color: brown;
+    
+}
