@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Tracker</title>
-,<link rel="stylesheet" href="./css/cards.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif;">
-    <h1>Weather Tracker</h1>
-<p><span id="weather-info">insert Weather info</span></p>
-<input id="location-search">
-<button id="search-button">Search</button>
+<h1>Weather Tracker</h1>
+<main>
+<div id="search-container" class="search">
+    <input id="location-search" type="text" placeholder="Type city name here">
+    <button id="search-button">Search</button>       
+</div>
+<div id="current-weather" class="current-weather-display">
+    <ul style="list-style-type: none; display: inline-block;">
+        <li id="currentlocation">Current location</li>
+        <li id="currentdate">Current Date</li>
+        <li id="currentimgli"><img id="currentimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ProhibitionSign2.svg/640px-ProhibitionSign2.svg.png" alt="no weather icon" height="70px" width="70px"></li>
+    </ul>
+    <ul style="list-style-type: none; display: inline-block;">
+        <li id="currenttemp">0C</li>
+        <li id="currentdesc">Current Condition</li>
+        <li id="currentwind">0Km/h Wind</li>
+        <li id="currenthumidity">0% Humidity</li>
+    </ul>
+</div>
 
+<section id="weather-container" class="weather-container">
+    <div id="weather-card1" class="card">
+        <ul style="list-style-type: none;">
+            <li id="card1-date">Date</li>
+            <li id="card1-temp">0C</li>
+            <li id="card1-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/ProhibitionSign2.svg/640px-ProhibitionSign2.svg.png" alt="no weather icon" height="40px" width="40px"></li>
+            <li id="card1-desc">Current Condition</li>
+        </ul>
+        
+    </div>
+    <div id="weather-card2" class="card"></div>
+    <div id="weather-card3" class="card"></div>
+    <div id="weather-card4" class="card"></div>
+    <div id="weather-card5" class="card"></div>
+</section>
+</main>
     <script src="./index.js"> </script>
 </body>
 </html>
