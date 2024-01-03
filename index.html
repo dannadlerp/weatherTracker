@@ -10,8 +10,18 @@
 <h1>Weather Tracker</h1>
 <main>
 <div id="search-container" class="search">
-    <input id="location-search" type="text" placeholder="Type city name here">
-    <button id="search-button">Search</button>       
+    <div id="searh-history-container">
+        <ul id="history-list" style="display: block;">
+            <input id="location-search" type="text" placeholder="Type city name here">
+            <li id="history-1"></li>
+            <li id="history-2"></li>
+            <li id="history-3"></li>
+            <li id="history-4"></li>
+            <li id="history-5"></li>
+            
+        </ul>
+    </div>
+    <button id="search-button" style="display: inline-block;">Search</button>
 </div>
 <div id="current-weather" class="current-weather-display">
     <ul style="list-style-type: none; display: inline-block;">
