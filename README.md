@@ -4,7 +4,7 @@
 Github repo URL: https://github.com/dannadlerp/weatherTracker
 
 
-Deployed App:
+Deployed App: https://dannadlerp.github.io/weatherTracker/
 
 
 
