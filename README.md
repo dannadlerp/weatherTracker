@@ -1,7 +1,9 @@
-
+![image](https://github.com/dannadlerp/weatherTracker/assets/142226474/d3e48624-27da-46d8-a318-90db14b54545)
 
 
 Github repo URL: https://github.com/dannadlerp/weatherTracker
+
+
 Deployed App:
 
 
