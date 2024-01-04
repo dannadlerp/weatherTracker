@@ -1,4 +1,10 @@
-let existingResults = localStorage.getItem('FavouriteWeatherSearches');
+let existingResults = [];
+if (localStorage.getItem('FavouriteWeatherSearches')) {
+   existingResults = JSON.parse(localStorage.getItem('FavouriteWeatherSearches'));
+}
+else {
+   existingResults.length = 5;
+    }
 let currentDate = new Date(); //gets current date;
 let currentDayDate = currentDate.getDate();
 let currentMonth = (currentDate.getMonth()+1);
@@ -9,8 +15,7 @@ function populateSrchHistory() {
    if(document.getElementById("location-search").value !== "") {
       if(existingResults.length === 5) {
          console.log("history item removed");
-         existingResults.pop()
-         existingResults = [city, existingResults[0], existingResults[1], existingResults[2], existingResults[3]];
+         
       }
    }
    
@@ -40,7 +45,10 @@ function clickSearchBtn() { //runs all processes when search button is clicked
    const fogimg = "https://cdn.icon-icons.com/icons2/1370/PNG/512/if-weather-30-2682821_90800.png";
    
 
-existingResults.pop();//testing//
+   existingResults.pop();
+   existingResults = [city, existingResults[0], existingResults[1], existingResults[2], existingResults[3]];
+   localStorage.setItem('FavouriteWeatherSearches', JSON.stringify(existingResults));
+   console.log(`current results: ${existingResults}`);
 
    //retrieve api and convert with json if search field is not empty
    if (city != "") {
@@ -115,9 +123,6 @@ existingResults.pop();//testing//
    //weatherInfo.windFut = `${data.list[cardNumber].wind.gust}km/h`;
    //console.log(weatherInfo.tempFut);
    
-         let futureDayDate = futureDate.getDate();
-let futureMonth = (futureDate.getMonth()+1);
-let futureYear = (futureDate.getFullYear() % 100);
          let generatedDate = document.getElementById(`card${cardNumber}-date`);
 //         console.log(`date is ${generatedDate.value}`);
  //        console.log(`${futureDayDate}/${futureMonth}/${futureYear}`);
@@ -147,7 +152,8 @@ let futureYear = (futureDate.getFullYear() % 100);
          } else if (weatherInfo.desc === "Fog" || "Mist") {
             setCurrentImg.src = fogimg;
          }
-         localStorage.setItem('FavouriteWeatherSearches', existingResults);
+         
+         
  //           console.log(`date is ${generatedDate.value}`);
  //        console.log(futureDate);
          generatedDate.innerHTML = `${currentDayDate+cardNumber}/${currentMonth}/${currentYear}`;
@@ -155,7 +161,6 @@ let futureYear = (futureDate.getFullYear() % 100);
 
       
          console.log("Search item saved to local storage")
-         localStorage.setItem('FavouriteWeatherSearches', existingResults);
          populateSrchHistory();
          
          console.log(existingResults);
